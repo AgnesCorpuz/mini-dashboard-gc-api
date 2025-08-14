@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Mini Dashboard</h1>
+    </header>
+    
+    <div class="dashboard">        
+        <div class="card users-card">
+            <h3>Users</h3>
+            <div class="user-controls">
+                <select id="statusFilter">
+                    <option value="all">All Users</option>
+                    <option value="online">Online</option>
+                    <option value="offline">Offline</option>
+                </select>
+                <button onclick="refreshUsers()">Refresh</button>
+            </div>
+            <div class="user-list" id="userList"></div>
+        </div>
+    </div>
+    
+    <script src="dashboard.js"></script>
+</body>
+</html>
