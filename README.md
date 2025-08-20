@@ -2,7 +2,7 @@
 
 ## Objective
 Create a simple web-based dashboard that:
-- Authenticates a user via Genesys Cloud OAuth (Client Credentials)
+- Authenticates a user via Genesys Cloud OAuth (Implicit Grant)
 - Fetches and displays a list of active users in the organization
 - Displays each user’s:
   - Name
@@ -10,18 +10,18 @@ Create a simple web-based dashboard that:
   - Email
 
 ### Bonus Objectives (Optional):
-- Filter users by presence status by adding a dropdown or buttons to filter users by presence (Available, Away, Offline, etc.).
+- Filter users by presence status using a dropdown menu with options for Available, Away, Busy, Offline, and Unknown statuses.
 - Re-fetch presence data by adding a "Refresh" button.
 - Add error handling (e.g. expired token, API errors).
+- Add "Loading users..." prompt while fetching data
 
 ## Requirements
 - Authentication
-  - Use OAuth 2.0 with Genesys Cloud (Client Credentials).
-  - After login, store the access token and use it in API calls (if using the native fetch call).
+  - Use OAuth 2.0 with Genesys Cloud (Implicit Grant).
+  - Use `http://localhost:3000/` or `http://localhost:8080/`
 - API Usage
   - Use the `/api/v2/users` endpoint to list users.
   - Use `/api/v2/users/{userId}/presences/purecloud` to fetch presence info for each user.
-  - Use Authorization: `Bearer {token}` in headers (if using the native fetch call).
 
 ## What This Tests
 - REST APIs and headers usage.
@@ -42,6 +42,8 @@ the latest version:
 
 > :bulb: The GitHub repository of the SDK is located [here](https://github.com/MyPureCloud/platform-client-sdk-javascript).
 
+> :bulb: View the documentation at https://mypurecloud.github.io/platform-client-sdk-javascript/.
+
 ## Notes
 - You may research things in the browser. Chatbots are **prohibited**.
-- Client Credentials will be provided.
+- Implicit Grant Client ID and temporary user accesss will be provided.

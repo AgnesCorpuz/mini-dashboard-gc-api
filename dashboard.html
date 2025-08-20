@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <!-- TODO: Add Genesys Cloud Platform Client SDK -->
 </head>
 <body>
     <header>
@@ -17,8 +18,11 @@
             <div class="user-controls">
                 <select id="statusFilter">
                     <option value="all">All Users</option>
-                    <option value="online">Online</option>
-                    <option value="offline">Offline</option>
+                    <option value="Available">Available</option>
+                    <option value="Away">Away</option>
+                    <option value="Busy">Busy</option>
+                    <option value="Offline">Offline</option>
+                    <option value="Unknown">Unknown</option>
                 </select>
                 <button onclick="refreshUsers()">Refresh</button>
             </div>
